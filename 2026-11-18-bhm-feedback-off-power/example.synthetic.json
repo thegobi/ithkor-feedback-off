@@ -1,0 +1,192 @@
+{
+  "lock": {
+    "data_kind": "synthetic",
+    "evaluator_sha256": "7bfafe3747b53a7b5b76acf5c79884d901b2cad2f43aa470e9c77cad22d72d60",
+    "gates_half_open_ticks": {
+      "early": [
+        375000,
+        425000
+      ],
+      "late": [
+        525000,
+        575000
+      ]
+    },
+    "key_sha256": "31471c1bdeb2d671f1d80c582bcfe8a2da319c1582868f451e0ec3973c0f1c64",
+    "latency_ticks": 0,
+    "outcomes_sha256": "8411db814d58c66e0bff2bd31926c98bae79f04a612041552c672c8741dc26ec",
+    "protocol_sha256": "498f98a6781f3a7a422c134c64f8e0b1c0fd74eb0d99df9ca3fe60a043ca3792",
+    "raw_sha256": "a3a3aa0d1254b3f3598f6d597a4fa5a8a6fbd6d456c3e581fe536a347303f983",
+    "schema": "ithkor-feedback-off-first-in-gates-v1",
+    "sham_seed": "ithkor-feedback-off-sham-v1",
+    "symbol_pairs_sha256": "3c6139139c2a2a29bb16f87b009b25fe5a728b144c12f20521bd94baec826436",
+    "ticks_per_time_unit": 1000000,
+    "trials": 560
+  },
+  "lock_sha256": "1538899e0dd64f40968c74184561d1316b344496db826ab65929188d3ed450a2",
+  "n_per_arm": 280,
+  "paired_H_sham": {
+    "changed": 20,
+    "flip_probability": "14/197",
+    "matched_atomic_endpoints": 280,
+    "perturbation_exercised": true,
+    "symbol_order": [
+      0,
+      1,
+      2,
+      null
+    ],
+    "transitions": [
+      [
+        90,
+        1,
+        2,
+        0
+      ],
+      [
+        4,
+        86,
+        3,
+        0
+      ],
+      [
+        5,
+        5,
+        83,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "primary_first_in_windows": {
+    "both_directions_pass": true,
+    "counts": {
+      "H": {
+        "early": 1,
+        "late": 16,
+        "no_click": 263,
+        "outside_only": 0
+      },
+      "L": {
+        "early": 16,
+        "late": 1,
+        "no_click": 263,
+        "outside_only": 0
+      }
+    },
+    "directional_tests": {
+      "early_L_minus_H": {
+        "counts": [
+          16,
+          1
+        ],
+        "difference": 0.05357142857142857,
+        "difference_ci95_newcombe": [
+          0.02641113075120105,
+          0.08735350300616704
+        ],
+        "fractions": [
+          0.05714285714285714,
+          0.0035714285714285713
+        ],
+        "p_one_sided": 0.00011304352235376908,
+        "reject_at_0.05": true
+      },
+      "late_H_minus_L": {
+        "counts": [
+          16,
+          1
+        ],
+        "difference": 0.05357142857142857,
+        "difference_ci95_newcombe": [
+          0.02641113075120105,
+          0.08735350300616704
+        ],
+        "fractions": [
+          0.05714285714285714,
+          0.0035714285714285713
+        ],
+        "p_one_sided": 0.00011304352235376908,
+        "reject_at_0.05": true
+      }
+    },
+    "first_tick_histograms": {
+      "H": {
+        "400000": 1,
+        "550000": 16
+      },
+      "L": {
+        "400000": 16,
+        "550000": 1
+      }
+    }
+  },
+  "sensitivity_first_from_start": {
+    "both_directions_pass": false,
+    "counts": {
+      "H": {
+        "early": 1,
+        "first_outside": 16,
+        "late": 0,
+        "no_click": 263
+      },
+      "L": {
+        "early": 0,
+        "first_outside": 16,
+        "late": 1,
+        "no_click": 263
+      }
+    },
+    "directional_tests": {
+      "early_L_minus_H": {
+        "counts": [
+          0,
+          1
+        ],
+        "difference": -0.0035714285714285713,
+        "difference_ci95_newcombe": [
+          -0.01994928235019393,
+          0.010278192147762143
+        ],
+        "fractions": [
+          0.0,
+          0.0035714285714285713
+        ],
+        "p_one_sided": 1.0,
+        "reject_at_0.05": false
+      },
+      "late_H_minus_L": {
+        "counts": [
+          0,
+          1
+        ],
+        "difference": -0.0035714285714285713,
+        "difference_ci95_newcombe": [
+          -0.01994928235019393,
+          0.010278192147762143
+        ],
+        "fractions": [
+          0.0,
+          0.0035714285714285713
+        ],
+        "p_one_sided": 1.0,
+        "reject_at_0.05": false
+      }
+    },
+    "first_tick_histograms": {
+      "H": {
+        "120000": 16,
+        "400000": 1
+      },
+      "L": {
+        "120000": 16,
+        "550000": 1
+      }
+    }
+  }
+}
