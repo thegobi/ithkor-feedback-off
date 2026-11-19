@@ -1,4 +1,12 @@
-# ITHKOR — Feedback-off Bose–Hubbard experiment
+# ITHKOR v8 — Local information capacity in a Bose–Hubbard ring
+
+[Technical proposal in English](ITHKOR_v8.en.md) · [Technický dokument po slovensky](ITHKOR_v8.sk.md) · [AI review and reproduction checks](REVIEW.md)
+
+[Who closed the doors in the quantum ring?](https://ithz.dev/blog/who-closed-the-doors-in-the-quantum-ring/) · [Kto zavrel dvere v kvantovom prstenci?](https://ithz.dev/sk/blog/kto-zavrel-dvere-v-kvantovom-prstenci/)
+
+The new closed-ring studies ask whether measurements can distinguish closure at an entropy ceiling from a timer. Their results come from simulations. The original feedback-off experiment is a separate laboratory proposal. The historical v1.0.0 release keeps its original files and checksums.
+
+## Feedback-off experiment
 
 In a six-site ring with three bosons, the proposed identification of local entropy threshold with the capacity of a nearby three-symbol register predicts **0.40 → 0.55** in inverse hopping units. For the nominal 92% and 99% symmetric readout settings, the simulated probabilities of at least one boson leaving at the respective times are 6.1134% and 5.4484%. The article describes the simulation, the proposed hardware test and reanalyses of other teams' measurements. [Slovenský článok](https://ithz.dev/sk/blog/od-troch-telies-ku-kvantovemu-testu/) · [English article](https://ithz.dev/blog/from-three-bodies-to-a-quantum-test/)
 
@@ -36,3 +44,22 @@ python -B 2026-11-18-fixed-verification/raw_check.py > delft-replay.json
 Get the first two ZIPs from the authors' Zenodo records above. Each analyzer verifies the archive's published MD5. The Delft runner reads seven byte ranges from the authors' large ZIP and verifies the ZIP member CRC32. If the host cannot serve the ranges, extract the seven HDF5 members of the same ZIP version, name them by the keys in `raw_check.py` (for example `w1.h5`), and pass their directory as `--cache`. The authors' datasets stay at their original archives. Only scripts, aggregate outputs and a synthetic example are included here.
 
 The [four-time readout simulation scores](2026-11-18-bhm-signed-fine/validation.json) are supplied as a numerical reference. At 8,000 simulated shots per trajectory, four measurements of signed, reference-subtracted current reached 73.22% balanced accuracy on 2,048 held-out pairs. A final-time-only observation gave 52.17% at the same shot budget. This separate classifier study's simulation pipeline is outside this release.
+
+## Reproducing the v8 closed-ring simulations
+
+Run these commands from the release root with Python and NumPy. Each command prints JSON. Compare numerical values with the corresponding archived file, allowing for floating-point rounding. The prediction generators write to standard output and leave the frozen inputs intact.
+
+```sh
+export OPENBLAS_NUM_THREADS=1
+(cd 2026-11-19-bhm-preparation-clock && sha256sum -c freeze.sha256)
+(cd 2026-11-19-bhm-delayed-choice && sha256sum -c freeze.sha256)
+python -B 2026-11-19-bhm-two-sites/run.py
+python -B 2026-11-19-bhm-boundary-valve/boundary_valve.py
+python -B 2026-11-19-bhm-preparation-clock/predict.py
+python -B 2026-11-19-bhm-preparation-clock/measure.py
+python -B 2026-11-19-bhm-delayed-choice/late.py
+python -B 2026-11-19-bhm-delayed-choice/score.py
+python -B 2026-11-19-bhm-boundary-probe/probe.py
+```
+
+Compare the output of `predict.py` and `late.py` with `predictions.json` in their respective directories. Compare the other five outputs with the corresponding `results.json`. Both freeze manifests cover the protocol, prediction generator and predicted values. The preparation-change, delayed-choice and boundary-probe reports distinguish simulated classification accuracy, detection probability and false-alarm bounds. The 3,170 copies per phase sign for the paired probe were sized after the primary test. The historical [v1.0.0 release](https://github.com/thegobi/ithkor-feedback-off/releases/tag/v1.0.0) identifies the open-system protocol.

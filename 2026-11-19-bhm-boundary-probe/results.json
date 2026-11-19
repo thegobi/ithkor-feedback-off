@@ -1,0 +1,77 @@
+{
+  "passive_threshold": [
+    {
+      "open": 0,
+      "inward_current": -0.0,
+      "drift": 3.191891195797325e-16
+    },
+    {
+      "open": 1,
+      "inward_current": -0.9757049274666085,
+      "drift": -0.039020466453925255
+    }
+  ],
+  "passive_clock": [
+    {
+      "open": 1,
+      "inward_current": -1.094259941905967,
+      "drift": -0.04152922320906315
+    },
+    {
+      "open": 1,
+      "inward_current": -0.9757049274666085,
+      "drift": -0.037024671298573786
+    }
+  ],
+  "passive_open": [
+    {
+      "open": 1,
+      "inward_current": -1.094259941905967,
+      "drift": -0.043759675950423016
+    },
+    {
+      "open": 1,
+      "inward_current": -0.9757049274666085,
+      "drift": -0.039020466453925255
+    }
+  ],
+  "passive_test": {
+    "correct": [
+      1730,
+      1715
+    ],
+    "decisions_per_arm": 2000,
+    "accuracy": 0.86125
+  },
+  "passive_retuned": {
+    "timer": 0.7381,
+    "correct": [
+      1546,
+      1551
+    ],
+    "decisions_per_arm": 2000,
+    "accuracy": 0.77425
+  },
+  "ideal_paired": {
+    "conditional_S_max": 0.6883714872191729,
+    "ensemble_S_max": 0.9740306823897114,
+    "threshold_transfer": [
+      0,
+      0.0025203399293082067
+    ],
+    "clock_transfer": [
+      0.002372239927963017,
+      0.002275674687867264
+    ],
+    "threshold_detection": 0.5668439695092788,
+    "clock_false_alarm": 0.0041327181766838686,
+    "worst_grid_false_alarm": 0.008199562576418852,
+    "worst_grid_clock": 0.7496,
+    "coarse_grid_worst": 0.008199562576418852,
+    "uniform_false_alarm_upper": 0.00855927734532645,
+    "n90_per_sign": 3170,
+    "n90_readouts": 12680,
+    "n90_power": 0.9000530665327636,
+    "n90_uniform_false_alarm_upper": 0.008661130383149388
+  }
+}
