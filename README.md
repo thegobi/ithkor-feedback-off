@@ -6,6 +6,12 @@
 
 The new closed-ring studies ask whether measurements can distinguish closure at an entropy ceiling from a timer. Their results come from simulations. The original feedback-off experiment is a separate laboratory proposal. The historical v1.0.0 release keeps its original files and checksums.
 
+## Branch B with a physical register during motion
+
+[Single-image laboratory proposal and reproducible calculation](2026-11-20-branch-b-spaced/README.md) · [Slovenský protokol](2026-11-20-branch-b-spaced/PROTOCOL.sk.md) · [Versioned release](https://github.com/thegobi/ithkor-feedback-off/releases/tag/ITHKOR-B-SPACED-1.0.0)
+
+The candidate predicts 0.17684 more particles in the first two sites with the 92% register than with the 99% register at the third write end. A register coupled to either site alone gives zero contrast. These predictions await hardware data.
+
 ## Feedback-off experiment
 
 In a six-site ring with three bosons, the proposed identification of local entropy threshold with the capacity of a nearby three-symbol register predicts **0.40 → 0.55** in inverse hopping units. For the nominal 92% and 99% symmetric readout settings, the simulated probabilities of at least one boson leaving at the respective times are 6.1134% and 5.4484%. The article describes the simulation, the proposed hardware test and reanalyses of other teams' measurements. [Slovenský článok](https://ithz.dev/sk/blog/od-troch-telies-ku-kvantovemu-testu/) · [English article](https://ithz.dev/blog/from-three-bodies-to-a-quantum-test/)
